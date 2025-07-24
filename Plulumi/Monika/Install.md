@@ -26,9 +26,22 @@ Pulumi is an open-source Infrastructure as Code (IaC) tool. Follow these steps t
 3. If installed correctly, it will display the Pulumi version.
 
 ### Step 3: Configure Pulumi with AWS
-1. Install the AWS CLI if not already installed:
-   - Download the AWS CLI installer for Windows: [AWS CLI Installer](https://aws.amazon.com/cli/).
-   - Run the installer and follow the instructions.
+1. Open an elevated command prompt (Run as Administrator).
+2. Execute the following command to install the AWS CLI:
+
+   ```bash
+   choco install awscli
+   ```
+
+3. Wait for the installation to complete.
+
+Once installed, you can verify it by running:
+
+```bash
+aws --version
+```
+
+This will show you the installed version of the AWS CLI.
 2. Configure AWS CLI with your Free Tier account:
    ```bash
    aws configure
