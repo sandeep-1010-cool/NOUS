@@ -25,33 +25,41 @@ Pulumi is an open-source Infrastructure as Code (IaC) tool. Follow these steps t
    ```
 3. If installed correctly, it will display the Pulumi version.
 
+Here’s a more organized version of the text:
+
+---
+
 ### Step 3: Configure Pulumi with AWS
-1. Open an elevated command prompt (Run as Administrator).
-2. Execute the following command to install the AWS CLI:
 
-   ```bash
-   choco install awscli
-   ```
+1. **Open an Elevated Command Prompt**
+   - Right-click on the Command Prompt and select "Run as Administrator."
 
-3. Wait for the installation to complete.
+2. **Install the AWS CLI**
+   - Execute the following command:
+     ```bash
+     choco install awscli
+     ```
+   - Wait for the installation to complete.
 
-Once installed, you can verify it by running:
+3. **Verify AWS CLI Installation**
+   - Run the command below to check the installed version:
+     ```bash
+     aws --version
+     ```
 
-```bash
-aws --version
-```
+4. **Configure AWS CLI with Your Free Tier Account**
+   - Run the following command:
+     ```bash
+     aws configure
+     ```
+   - Provide your AWS Access Key ID, Secret Access Key, default region, and output format when prompted.
 
-This will show you the installed version of the AWS CLI.
-2. Configure AWS CLI with your Free Tier account:
-   ```bash
-   aws configure
-   ```
-   Provide your AWS Access Key ID, Secret Access Key, region, and output format.
-3. Log in to Pulumi:
-   ```bash
-   pulumi login
-   ```
-   This will open a browser window to authenticate.
+5. **Log in to Pulumi**
+   - Execute the command:
+     ```bash
+     pulumi login
+     ```
+   - This will open a browser window for authentication.
 
 ### Step 4: Create a Pulumi Project
 1. Create a new directory for your Pulumi project:
