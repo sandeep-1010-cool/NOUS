@@ -17,7 +17,7 @@ Great! Here's a **complete step-by-step guide** to help you **set up Python (wit
 
 ### ✅ Step 2: Install Python for Current User
 
-1. Run the installer
+1. Run the installer [Custom installation]
 
 2. On the **"Optional Features"** screen:
 
