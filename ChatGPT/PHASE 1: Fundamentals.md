@@ -1,7 +1,3 @@
-Great — let’s dive into **Pulumi** step-by-step. I’ll teach you in a structured, layered manner: starting from fundamentals, moving to advanced, and ending with enterprise-level practices. You don't need to ask anything — I’ll guide you continuously.
-
----
-
 ## 🧱 **PHASE 1: Fundamentals – Getting Started with Pulumi**
 
 ### 🔹 Step 1: What is Pulumi?
