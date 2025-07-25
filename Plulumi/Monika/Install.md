@@ -7,8 +7,9 @@ This guide provides step-by-step instructions to install Pulumi and set up Claud
 2. [Section 1: Installing Pulumi on Windows](#section-1-installing-pulumi-on-windows)
     - [Step 1: Install Pulumi CLI](#step-1-install-pulumi-cli)
     - [Step 2: Verify Installation](#step-2-verify-installation)
-    - [Step 3: Configure Pulumi with AWS](#step-3-configure-pulumi-with-aws)
-    - [Step 4: Create a Pulumi Project](#step-4-create-a-pulumi-project)
+    - [Step 3: Configure AWS CLI](#step-3-configure-aws-cli)
+    - [Step 4: Log in to Pulumi](#step-4-log-in-to-pulumi)
+    - [Step 5: Create a Pulumi Project](#step-5-create-a-pulumi-project)
 3. [Section 2: Setting Up Claude AI with Cursor IDE](#section-2-setting-up-claude-ai-with-cursor-ide)
     - [Step 1: Install Python](#step-1-install-python)
     - [Step 2: Install Claude AI SDK](#step-2-install-claude-ai-sdk)
@@ -42,65 +43,44 @@ Pulumi is an open-source Infrastructure as Code (IaC) tool. Follow these steps t
    ```
 3. If installed correctly, it will display the Pulumi version.
 
-### Step 3: Configure Pulumi with AWS
-1. **Open an Elevated Command Prompt**
-   - Right-click on the Command Prompt and select "Run as Administrator."
-
-2. **Install the AWS CLI**
+### Step 3: Configure AWS CLI
+1. **Install the AWS CLI**
    - Execute the following command:
      ```bash
      choco install awscli
      ```
    - Wait for the installation to complete.
 
-3. **Verify AWS CLI Installation**
+2. **Verify AWS CLI Installation**
    - Run the command below to check the installed version:
      ```bash
      aws --version
      ```
 
-Here's a more organized version of your text:
-
----
-
-### 4. Configure AWS CLI with Your Free Tier Account
-
-1. **Run the Configuration Command:**
-   ```bash
-   aws configure
-   ```
-   - Provide your AWS Access Key ID, Secret Access Key, default region, and output format when prompted.
-
-2. **Verify Your AWS Connection:**
-
-   - **Check Configuration:**
-     ```bash
-     aws configure list
-     ```
-   
-   - **Test IAM User Command:**
-     ```bash
-     aws iam get-user
-     ```
-
-   - **Reconfigure with a Valid Region (e.g., `us-east-1`):**
+3. **Configure AWS CLI with Your Free Tier Account**
+   - Run the following command:
      ```bash
      aws configure
      ```
+   - Provide your AWS Access Key ID, Secret Access Key, default region, and output format when prompted.
 
-   - **List S3 Buckets:**
+4. **Verify Your AWS Connection**
+   - Run the following commands to test your AWS setup:
      ```bash
+     aws configure list
+     aws iam get-user
      aws s3 ls
      ```
 
-- **Reference:**
-  - [aws_account_user.md]
+### Step 4: Log in to Pulumi
+1. Open a Command Prompt or PowerShell window.
+2. Log in to Pulumi by executing the following command:
+   ```bash
+   pulumi login
+   ```
+3. This will open a browser window for authentication. Follow the prompts to complete the login process.
 
---- 
-
-Let me know if you need any further adjustments!
-
-### Step 4: Create a Pulumi Project
+### Step 5: Create a Pulumi Project
 1. Create a new directory for your Pulumi project:
    ```bash
    mkdir my-pulumi-project
@@ -110,7 +90,7 @@ Let me know if you need any further adjustments!
    ```bash
    pulumi new aws-python
    ```
-   Follow the prompts to set up your project.
+3. Follow the prompts to set up your project.
 
 ## Section 2: Setting Up Claude AI with Cursor IDE
 
