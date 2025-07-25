@@ -54,6 +54,65 @@ Here’s a more organized version of the text:
      ```
    - Provide your AWS Access Key ID, Secret Access Key, default region, and output format when prompted.
 
+Here is a more organized version of your text, with clearer headings and formatting:
+
+---
+
+# AWS IAM User Creation and Permissions
+
+## Prerequisites
+Before starting, ensure you have the following details ready:
+- AWS Access Key ID
+- Secret Access Key
+- Default region (e.g., `us-east-1`)
+- Output format (e.g., `json`, `text`, or `table`)
+
+## Steps to Create a User and Add Permissions in AWS IAM
+
+1. **Log In to AWS Management Console**
+   - Go to the [AWS Management Console](https://aws.amazon.com/console) and log in to your account.
+
+2. **Navigate to IAM**
+   - Select **IAM (Identity and Access Management)** from the services menu.
+
+3. **Add a New User**
+   - Click on **Users** in the left sidebar.
+   - Click on **Add user**.
+     - Enter a **User name** (e.g., `pulumi-user`).
+     - Select the **access type** (e.g., programmatic access).
+
+4. **Set Permissions**
+   - Click **Next: Permissions**.
+   - Choose **Attach existing policies directly**.
+   - In the search box, type **AdministratorAccess** and select the policy.
+
+5. **Add Tags (Optional)**
+   - Click **Next: Tags**. You can skip this step if tags are not needed.
+
+6. **Review and Create User**
+   - Click **Next: Review**, then **Create user**.
+   - Note the **Access Key ID** and **Secret Access Key** if programmatic access was enabled.
+
+## Confirming User Access
+
+1. **Log In to AWS Management Console**
+   - Go to the AWS Management Console and log in.
+
+2. **Access User Settings**
+   - Navigate to **IAM** again.
+   - Click on **Users** and select the newly created username.
+
+3. **Create Access Key**
+   - Under the **Security credentials** tab, click **Create access key**.
+   - Note your **Access Key ID** and **Secret Access Key**.
+     - (Save the secret key securely; it won't be displayed again.)
+
+4. **Set Default Region and Output Format**
+   - Set your **default region** (e.g., `us-east-1`).
+   - Choose your **output format** (e.g., `json`, `text`, or `table`).
+
+---
+
 5. **Log in to Pulumi**
    - Execute the command:
      ```bash
