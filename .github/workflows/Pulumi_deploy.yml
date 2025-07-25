@@ -20,6 +20,9 @@ jobs:
         with:
           python-version: '3.9'
 
+      - name: Configure AWS Region
+        run: pulumi config set aws:region us-west-2
+
       - name: Setup Pulumi
         uses: pulumi/actions@v4
         with:
@@ -44,6 +47,9 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
+
+      - name: Configure AWS Region
+        run: pulumi config set aws:region us-west-2
 
       - name: Setup Pulumi
         uses: pulumi/actions@v4
