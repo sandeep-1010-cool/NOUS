@@ -24,6 +24,7 @@ jobs:
         uses: pulumi/actions@v4
         with:
           command: preview
+          stack-name: dev
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
@@ -46,7 +47,7 @@ jobs:
         uses: pulumi/actions@v4
         with:
           command: up
-          args: --yes
+          stack-name: dev
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
