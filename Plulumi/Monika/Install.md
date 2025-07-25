@@ -59,19 +59,46 @@ Pulumi is an open-source Infrastructure as Code (IaC) tool. Follow these steps t
      aws --version
      ```
 
-4. **Configure AWS CLI with Your Free Tier Account**
-   - Run the following command:
+Here's a more organized version of your text:
+
+---
+
+### 4. Configure AWS CLI with Your Free Tier Account
+
+1. **Run the Configuration Command:**
+   ```bash
+   aws configure
+   ```
+   - Provide your AWS Access Key ID, Secret Access Key, default region, and output format when prompted.
+
+2. **Verify Your AWS Connection:**
+
+   - **Check Configuration:**
+     ```bash
+     aws configure list
+     ```
+   
+   - **Test IAM User Command:**
+     ```bash
+     aws iam get-user
+     ```
+
+   - **Reconfigure with a Valid Region (e.g., `us-east-1`):**
      ```bash
      aws configure
      ```
-   - Provide your AWS Access Key ID, Secret Access Key, default region, and output format when prompted.
 
-5. **Log in to Pulumi**
-   - Execute the command:
+   - **List S3 Buckets:**
      ```bash
-     pulumi login
+     aws s3 ls
      ```
-   - This will open a browser window for authentication.
+
+- **Reference:**
+  - [aws_account_user.md]
+
+--- 
+
+Let me know if you need any further adjustments!
 
 ### Step 4: Create a Pulumi Project
 1. Create a new directory for your Pulumi project:
