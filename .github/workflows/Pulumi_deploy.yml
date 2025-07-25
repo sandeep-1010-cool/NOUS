@@ -1,28 +1,27 @@
-# Pulumi CI/CD Setup
-
-Quick guide to automate Pulumi deployments.
-
-## GitHub Actions Workflow
-
-### File: `.github/workflows/pulumi.yml`
-```yaml
 name: Pulumi Deployment
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
-    branches: [main]
+    branches:
+      - main
 
 jobs:
   preview:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
           python-version: '3.9'
-      - uses: pulumi/actions@v4
+
+      - name: Setup Pulumi
+        uses: pulumi/actions@v4
         with:
           command: preview
         env:
@@ -35,130 +34,20 @@ jobs:
     needs: preview
     if: github.ref == 'refs/heads/main'
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
           python-version: '3.9'
-      - uses: pulumi/actions@v4
+
+      - name: Setup Pulumi
+        uses: pulumi/actions@v4
         with:
           command: up
+          args: --yes
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-```
-
-## Required Secrets
-
-Add these to GitHub Repository → Settings → Secrets:
-
-```bash
-PULUMI_ACCESS_TOKEN=your-pulumi-token
-AWS_ACCESS_KEY_ID=your-aws-access-key
-AWS_SECRET_ACCESS_KEY=your-aws-secret-key
-```
-
-## Get Access Tokens
-
-### Pulumi Token:
-1. Go to [Pulumi Console](https://app.pulumi.com/)
-2. Account Settings → Access Tokens
-3. Create new token
-
-### AWS Credentials:
-```bash
-# Create IAM user for CI/CD
-aws iam create-user --user-name pulumi-ci
-aws iam attach-user-policy --user-name pulumi-ci --policy-arn arn:aws:iam::aws:policy/AdministratorAccess
-aws iam create-access-key --user-name pulumi-ci
-```
-
-## Alternative Platforms
-
-### GitLab CI:
-```yaml
-# .gitlab-ci.yml
-stages: [preview, deploy]
-
-preview:
-  stage: preview
-  image: python:3.9
-  script:
-    - pip install pulumi pulumi-aws
-    - pulumi preview
-  only: [merge_requests]
-
-deploy:
-  stage: deploy
-  image: python:3.9
-  script:
-    - pip install pulumi pulumi-aws
-    - pulumi up --yes
-  only: [main]
-```
-
-### Jenkins:
-```groovy
-// Jenkinsfile
-pipeline {
-    agent any
-    stages {
-        stage('Preview') {
-            steps {
-                sh 'pip install pulumi pulumi-aws'
-                sh 'pulumi preview'
-            }
-        }
-        stage('Deploy') {
-            when { branch 'main' }
-            steps {
-                sh 'pulumi up --yes'
-            }
-        }
-    }
-}
-```
-
-## Best Practices
-
-### Security:
-- Never commit secrets to version control
-- Use least privilege for AWS credentials
-- Rotate tokens regularly
-
-### Workflow:
-- Preview on all PRs
-- Deploy only on main branch
-- Use specific Python/Pulumi versions
-
-### Environment Management:
-```bash
-# Multiple environments
-pulumi stack init dev
-pulumi stack init staging
-pulumi stack init prod
-
-# Environment configs
-pulumi config set aws:region us-east-1 --stack dev
-pulumi config set aws:region us-west-2 --stack prod
-```
-
-## Troubleshooting
-
-### Common Issues:
-```bash
-# Check AWS credentials
-aws sts get-caller-identity
-
-# Verify Pulumi token
-pulumi whoami
-
-# Test locally first
-pulumi preview
-pulumi up
-```
-
-## Notes:
-- Test workflows in separate branch first
-- Use Pulumi Cloud for state management
-- Monitor deployment costs 
