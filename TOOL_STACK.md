@@ -45,18 +45,44 @@
 ### 🤖 **User Story 2: AI Workflow Setup & Familiarization**
 
 **Goal**: Use Claude/OpenAI tools to automate workflows and code generation.
+Here’s a concise version of the steps for User Story 2:
 
-#### 🛠️ **AI Tooling Tasks**
+### AI Tooling Tasks
 
-* [ ] Use **Nous credentials** to access **Claude AI** or **OpenAI Codex**
-* [ ] Install and configure:
+1. Use **Nous credentials** to access **Claude AI** or **OpenAI Codex**.
+2. Install and configure Claude Code or OpenAI Codex locally.
+3. Ensure Claude Code is installed and configured with your API key.
 
-  * [ ] Claude Code **OR** OpenAI Codex on your local machine
-* [ ] Start using key workflow commands:
+### Workflow Setup
 
-  * [ ] `/create-prd` → generate **Project Requirements Document**
-  * [ ] `/generate-tasks` → break down PRD into task list
-  * [ ] `/process-task-list` → use AI to generate **Pulumi EC2 code** from task list (see User Story 1)
+1. Run in project root terminal:
+
+   ```bash
+   claude /init
+   ```
+
+   This creates `CLAUDE.md`.
+
+2. (Optional) Customize `CLAUDE.md` with:
+
+   ```markdown
+   ### /create-prd
+   Prompt: Generate detailed Project Requirements Document.
+
+   ### /generate-tasks
+   Prompt: Break PRD into task list with estimates.
+
+   ### /process-task-list
+   Prompt: Scaffold Pulumi EC2 code from tasks.
+   ```
+
+3. Use commands to automate workflows:
+
+   ```bash
+   claude /create-prd
+   claude /generate-tasks
+   claude /process-task-list
+   ```
 
 ---
 
