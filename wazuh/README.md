@@ -113,14 +113,6 @@ Wazuh is fully **open source** and distributed under the **GPLv2 license**. No c
 
 ---
 
-> **Pro Tip:**  
-> Wazuh shines as part of a layered security approach. Use it together with endpoint protection, network firewalls, and threat intelligence feeds to build a strong defense that’s greater than the sum of its parts.
-
----
-
-# Ready to get started? Dive in and secure your world with Wazuh today!
-````
-
 ---
 
 **Summary:**  
