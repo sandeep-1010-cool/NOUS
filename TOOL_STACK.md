@@ -1,7 +1,6 @@
 **✅ Getting Started To-Do List (While Credentials Are Pending)**
 *Organized by User Stories & Tasks – No information left out*
 
----
 
 ### 🧩 **User Story 1: EC2 Deployment Mini Project**
 
