@@ -1,30 +1,3 @@
-Your revised `README.md` is excellent—clear, engaging, and inviting for both newcomers and experienced users! The structure, tone, and content strike a perfect balance between friendliness and professionalism. Here are a few minor suggestions to make it even more polished:
-
----
-
-### Suggested Tweaks
-
-1. **Typo Fix:**  
-   In the "Indexer" section, change “ElasticSearch” to “Elasticsearch” (the official spelling).
-
-2. **Diagram Formatting:**  
-   For maximum compatibility in Markdown viewers, consider using ASCII diagrams without triple backticks (which can sometimes break formatting in some renderers).  
-   Alternatively, use code blocks with `text` for clarity.
-
-3. **Docker Quickstart:**  
-   Add a note about prerequisites (Docker and Docker Compose should be installed).
-
-4. **Pro Tip Section:**  
-   Consider making the "Pro Tip" a blockquote for emphasis.
-
-5. **License Badge:**  
-   You might want to add a badge at the top for quick visibility.
-
----
-
-### Example with Minor Edits
-
-````markdown
 # 🛡️ Wazuh: Open Source Security Monitoring & Threat Detection Made Simple
 
 ![GPLv2 License](https://img.shields.io/badge/license-GPLv2-blue.svg)
