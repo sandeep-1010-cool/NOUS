@@ -1,6 +1,3 @@
-Absolutely! Here’s a **simple, step-by-step guide** to set up Wazuh on AWS using Pulumi and automate it with GitHub Actions.  
-This will get you started quickly, with clear next steps for each part.
-
 ---
 
 # 🚀 Step-by-Step: Deploy Wazuh on AWS with Pulumi & GitHub Actions
