@@ -67,7 +67,7 @@ const role = new aws.iam.Role("lambda-exec-role", {
 // Attach AWSLambdaBasicExecutionRole policy
 new aws.iam.RolePolicyAttachment("lambda-basic-exec-policy", {
     role: role.name,
-    policyArn: aws.iam.ManagedPolicies.AWSLambdaBasicExecutionRole,
+    policyArn: aws.iam.ManagedPolicy.AWSLambdaBasicExecutionRole,
 });
 
 // Create Lambda Function
