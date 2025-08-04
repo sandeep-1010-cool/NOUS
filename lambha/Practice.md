@@ -1,7 +1,3 @@
-Absolutely! Here’s a simple **Pulumi + AWS Lambda** project to help you test deploying a basic Lambda function. This example uses **Pulumi with TypeScript** (the most common combo), but let me know if you want Python instead.
-
----
-
 # 🚀 Simple Pulumi AWS Lambda Project
 
 This project will:
